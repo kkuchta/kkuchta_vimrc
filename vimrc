@@ -36,8 +36,6 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
-set undofile
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -64,9 +62,9 @@ let mapleader = ","
 "set autochdir
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 set list
@@ -74,3 +72,20 @@ set listchars=tab:▸\ ,eol:¬
 
 map <Leader>t :FuzzyFinderTextMate<Enter>
 autocmd User Rails let  g:fuzzy_roots = [RailsRoot()]
+
+"Set line width to 80, with older version backup support.
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+"Set swap and backup files to the tmp location.
+if has("win32") || has("win64")
+   set directory=$TMP
+   set backupdir=$TMP
+else
+   set directory=/tmp
+   set backupdir=/TMP
+end
+
