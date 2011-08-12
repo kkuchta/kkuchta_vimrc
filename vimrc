@@ -86,7 +86,7 @@ if has("win32") || has("win64")
    set backupdir=$TMP
 else
    set directory=/tmp
-   set backupdir=/TMP
+   set backupdir=/tmp
 end
 
 map <C-j> :bprev<CR>
