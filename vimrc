@@ -93,3 +93,8 @@ map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
 nnoremap <Leader>fj :%!python -m json.tool<Enter>
 
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>b <Esc>:CommandTBuffer<CR>
+
+inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
