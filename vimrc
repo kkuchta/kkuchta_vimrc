@@ -55,6 +55,7 @@ vnoremap <F1> <ESC>
 nnoremap ; :
 
 au FocusLost * :wa
+
 inoremap jj <ESC>
 
 let mapleader = ","
@@ -98,3 +99,11 @@ noremap <leader>O <Esc>:CommandTFlush<CR>
 noremap <leader>b <Esc>:CommandTBuffer<CR>
 
 inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>"
+nnoremap <leader>d :NERDTreeToggle<cr>
+
+"Escape to turn of highlighting.
+nnoremap <silent> <esc> :noh<return><esc>
+
+map H ^
+map L $
+
