@@ -5,6 +5,8 @@ filetype plugin on
 " Turn on line numbering. Turn it off with "set nonu" 
 set nu 
 
+
+
 " Set syntax on
 syntax on
 
@@ -107,3 +109,10 @@ nnoremap <silent> <esc> :noh<return><esc>
 map H ^
 map L $
 
+"Set vim to use system clipboard for the default register
+set clipboard=unnamed
+
+"Map r to 'delete to black hole register'
+nnoremap r "_d
+vnoremap r "_d
+nnoremap rr "_dd
