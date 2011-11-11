@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/kevin/ssh/mountme/svn/staging/www/svn/expensify.com'
 let g:netrw_dirhist_2='/Users/kevin/code/ruby/ubimenu_v2'
 let g:netrw_dirhist_3='/Users/kevin/ssh/mountme/svn/staging/www/svn/expensify.com'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/kevin/Desktop/web/res/js'
 let g:netrw_dirhist_6='/Users/kevin/code/ruby/turktest'
 let g:netrw_dirhist_7='/Users/kevin/code/ruby/ubimenu_v2'
 let g:netrw_dirhist_8='/Users/kevin/code/expensify/Modules'
+let g:netrw_dirhist_9='/Users/kevin/code/ruby/ubimenu_v2'

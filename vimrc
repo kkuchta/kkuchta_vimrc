@@ -5,8 +5,6 @@ filetype plugin on
 " Turn on line numbering. Turn it off with "set nonu" 
 set nu 
 
-
-
 " Set syntax on
 syntax on
 
@@ -63,7 +61,6 @@ inoremap jj <ESC>
 let mapleader = ","
 
 "set autochdir
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 set tabstop=4
 set shiftwidth=4
@@ -113,6 +110,18 @@ map L $
 set clipboard=unnamed
 
 "Map r to 'delete to black hole register'
-nnoremap r "_d
-vnoremap r "_d
-nnoremap rr "_dd
+"nnoremap r "_d
+"vnoremap r "_d
+"nnoremap rr "_dd
+
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+nnoremap <leader>zh <ESC>:let g:zenburn_high_Contrast=1<CR>:colors zenburn<CR>
+nnoremap <leader>zl <ESC>:let g:zenburn_high_Contrast=0<CR>:colors zenburn<CR>
+
+let g:zenburn_high_Contrast=1
+
+nnoremap ˚ 10k
+vnoremap ˚ 10k
+nnoremap ∆ 10j
+vnoremap ∆ 10j
