@@ -115,7 +115,7 @@ inoremap <expr> <Esc>      pumvisible() ? "\<C-e>": "\<Esc>"
 nnoremap <leader>d :NERDTreeToggle<cr>
 
 "Escape to turn of highlighting.
-nnoremap <silent> <esc> :noh<return><esc>
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 "shift-h and shift-l to beginning and end of line.
 map H ^
@@ -153,3 +153,16 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
+
+" Substitute shortcut
+nnoremap <leader>s :%s//<left>
+
+" Jump to end of line from insert mode
+" FIXME
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+
+" w!! will write with sudo
+cnoremap w!! w !sudo tee % >/dev/null
+
+let NERDTreeMinimalUI = 1
