@@ -1,4 +1,4 @@
-filetype off 
+filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype plugin on
@@ -139,10 +139,10 @@ nnoremap <leader>zl <ESC>:let g:zenburn_high_Contrast=0<CR>:colors zenburn<CR>
 let g:zenburn_high_Contrast=1
 
 "Map option-j and option-k to 10-up and 10-down.
-nnoremap ˚ 10k
-vnoremap ˚ 10k
-nnoremap ∆ 10j
-vnoremap ∆ 10j
+"nnoremap ˚ 10k
+"vnoremap ˚ 10k
+"nnoremap ∆ 10j
+"vnoremap ∆ 10j
 
 " Toggle relative line numbers.
 function! NumberToggle()
@@ -166,3 +166,11 @@ inoremap <c-e> <esc>A
 cnoremap w!! w !sudo tee % >/dev/null
 
 let NERDTreeMinimalUI = 1
+
+noremap ∆ :m+<CR>
+noremap ˚ :m-2<CR>
+inoremap ∆ <Esc>:m+<CR>
+inoremap ˚ <Esc>:m-2<CR>
+vnoremap ∆ :m'>+<CR>gv
+vnoremap ˚ :m-2<CR>gv
+
