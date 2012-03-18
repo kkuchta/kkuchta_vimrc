@@ -15,6 +15,9 @@ set autoindent
 "Case insensitive search
 set ic
 
+nnoremap j gj
+nnoremap k gk
+
 "Higlhight search
 set hls
 
@@ -38,6 +41,8 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 
+set autoread                    "Reload files changed outside vim
+
 "Turn off arrow navigation
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -48,9 +53,8 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-
-"nnoremap j gj
-"nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 
 "Semicolon same as colon
 nnoremap ; :
@@ -89,14 +93,11 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
-"Set swap and backup files to the tmp location.
-if has("win32") || has("win64")
-   set directory=$TMP
-   set backupdir=$TMP
-else
-   set directory=/tmp
-   set backupdir=/tmp
-end
+set noswapfile
+set nobackup
+set nowb
+set undodir=/tmp
+set undofile
 
 "Cycle through buffers with ctrl-j and ctrl-k
 map <C-j> :bprev<CR>
@@ -174,3 +175,14 @@ inoremap ˚ <Esc>:m-2<CR>
 vnoremap ∆ :m'>+<CR>gv
 vnoremap ˚ :m-2<CR>gv
 
+vnoremap < <gv
+vnoremap > >gv
+
+map <silent> <C-s> :NERDTree<CR><C-w>p:NERDTreeFind<CR>
+
+" Make Y behave like other capitals
+map Y y$
+nnoremap Q @@
+
+nnoremap <leader>ft :CommandTFlush<CR>
+vnoremap <leader>h :TOhtml<CR>
