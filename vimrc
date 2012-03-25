@@ -96,8 +96,11 @@ endif
 set noswapfile
 set nobackup
 set nowb
-set undodir=/tmp
-set undofile
+
+if( exists("+undofile") )
+    set undodir=/tmp
+    set undofile
+endif
 
 "Cycle through buffers with ctrl-j and ctrl-k
 map <C-j> :bprev<CR>
@@ -105,6 +108,8 @@ map <C-k> :bnext<CR>
 
 ",fj autoformats json
 nnoremap <Leader>fj :%!python -m json.tool<Enter>
+",fx autoformats xml
+nnoremap <Leader>fx :%!xmllint --format -<ENTER>
 
 "Set up command t
 noremap <leader>o <Esc>:CommandT<CR>
@@ -186,3 +191,6 @@ nnoremap Q @@
 
 nnoremap <leader>ft :CommandTFlush<CR>
 vnoremap <leader>h :TOhtml<CR>
+
+" Map ,<cr> to normal cr for use with DoubleTap plugin.
+inoremap <leader><CR> <CR>
