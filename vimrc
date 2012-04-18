@@ -139,10 +139,8 @@ set clipboard=unnamed
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 au! BufWritePost .vimrc source %
 
-nnoremap <leader>zh <ESC>:let g:zenburn_high_Contrast=1<CR>:colors zenburn<CR>
-nnoremap <leader>zl <ESC>:let g:zenburn_high_Contrast=0<CR>:colors zenburn<CR>
-
-let g:zenburn_high_Contrast=1
+set background=light
+colorscheme solarized
 
 "Map option-j and option-k to 10-up and 10-down.
 "nnoremap ˚ 10k
@@ -192,5 +190,27 @@ nnoremap Q @@
 nnoremap <leader>ft :CommandTFlush<CR>
 vnoremap <leader>h :TOhtml<CR>
 
-" Map ,<cr> to normal cr for use with DoubleTap plugin.
-inoremap <leader><CR> <CR>
+" Add number text object
+onoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
+xnoremap N :<c-u>call <SID>NumberTextObject(0)<cr>
+onoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
+xnoremap aN :<c-u>call <SID>NumberTextObject(1)<cr>
+onoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
+xnoremap iN :<c-u>call <SID>NumberTextObject(1)<cr>
+ 
+function! s:NumberTextObject(whole)
+ normal! v
+
+ while getline('.')[col('.')] =~# '\v[0-9]'
+     normal! l
+ endwhile
+
+ if a:whole
+     normal! o
+
+     while col('.') > 1 && getline('.')[col('.') - 2] =~# '\v[0-9]'
+         normal! h
+     endwhile
+ endif
+endfunction
+
