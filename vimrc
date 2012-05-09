@@ -141,7 +141,7 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 au! BufWritePost .vimrc source %
 
 "Edit ~/TODO.txt
-nnoremap <leader>et <C-w><C-v><C-l>:e ~/Dropbox/TODO.txt<cr>
+nnoremap <leader>et <C-w><C-v><C-l>:e ~/Dropbox/global/TODO.txt<cr>
 
 set background=light
 colorscheme solarized
